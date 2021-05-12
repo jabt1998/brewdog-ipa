@@ -4,19 +4,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = (props) => {
-  const {placeholder, updateSearchText, setClick} = props
+  const {placeholder, updateSearchText, setClick, setAbvClicked, abvClicked} = props
 
-  const input = <input type="text" placeholder="insert text here" className={styles.input} onInput={e => updateSearchText(e.target.value)}/>
+  const input = <input type="text" placeholder="Insert Beer here" className={styles.input} onInput={e => updateSearchText(e.target.value)}/>
+
   return (
     <nav className={styles.nav}>
       <h2>Brewdog</h2>
       <div className={styles.search}>
-      <FontAwesomeIcon icon={faSearch} className={styles.fa} />
+      <div className={styles.searchIcon}>
+        <FontAwesomeIcon icon={faSearch} className={styles.fa} />
+      </div>
       {input}
       </div>
-      <div>
-        <label htmlFor=">4%">more than 4%</label>
-        <input type="checkbox" onInput={!setClick}/>
+      <div className={styles.abv}>
+        <label htmlFor=">5%">abv > 5%</label>
+        <input type="checkbox" onChange={() => setAbvClicked(!abvClicked)}/>
       </div>
     </nav>
   );

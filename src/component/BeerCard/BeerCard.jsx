@@ -3,13 +3,15 @@ import styles from "./BeerCard.module.scss";
 
 const BeerCard = (props) => {
 
-  const { beer } = props
+  const { beers } = props
   
   return (
     <div className={styles.beercard}> 
-      <h2>{beer.name}</h2>
-      <img src={beer.image_url} alt=""/>
-      <p>{beer.abv}</p>
+      <h2>{beers.name}</h2>
+      <div className={styles.beerInfo}>
+        <img src={beers.image_url} alt=""/>
+        <p>{beers.abv}%</p>
+      </div>
     </div>
   );
 };

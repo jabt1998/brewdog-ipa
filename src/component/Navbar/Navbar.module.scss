@@ -2,7 +2,35 @@
 margin: 0;
 padding: 0;
 box-sizing: border-box;
+background-color: aqua;
 
 display: flex;
 justify-content: space-between;
+align-items: center;
+
+h2 {
+  margin-left: 20px;
+}
+
+.input {
+  width: 150px;
+  height: 35px;
+  border-radius: 10px;
+}
+
+.search{
+  display: flex;
+  .searchIcon {
+    margin: 5px 5px 0 0;
+    .fa {
+      font-size: 30px;    
+    }
+  }
+}
+
+.abv {
+  margin-right: 20px;
+}
+
+
 }
